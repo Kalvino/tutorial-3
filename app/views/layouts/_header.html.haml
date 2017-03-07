@@ -1,0 +1,31 @@
+%nav.navbar.navbar-default.navbar-fixed-top{role: "navigation"}
+	.container
+		.navbar-header
+			%button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
+				%span.sr-only Toggle navigation
+				%span.icon-bar
+				%span.icon-bar
+				%span.icon-bar
+			.navbar-brand
+				= link_to image_tag("logo.png", class: "logo"), root_path
+		.collapse.navbar-collapse.navbar-ex1-collapse
+			-if user_signed_in?
+				%ul.nav.navbar-nav.pull-right
+					%li.italicized= link_to current_user.first_name.capitalize, user_path(current_user)
+					%li
+						%a{href: root_path}
+							Home
+							%span.glyphicon.glyphicon-home
+					%li.dropdown
+						%a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+							%span.glyphicon.glyphicon-log-out
+						%ul.dropdown-menu.dropdown-menu-right
+							%li= link_to "Sign out", destroy_user_session_path, method: :delete
+
+			- else
+				%ul.nav.navbar-nav.navbar-right
+					%li= link_to "Sign Up", new_user_registration_path
+					%li
+						%a{href: new_user_session_path}
+							Sign in
+							%span.glyphicon.glyphicon-log-in		

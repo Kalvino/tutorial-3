@@ -1,0 +1,21 @@
+!!! 5
+%html
+%head
+  %title Alliance
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags
+  
+%body 
+  = render 'layouts/header' 
+  .container
+    - flash.each do |name, msg|
+      = content_tag :div, class: "alert", data: { alert: nil} do
+        = msg
+        = link_to raw('&times;'), "#", class: "close pull-right"
+
+    #modal-holder
+
+    = yield
+  %footer#footer.footer.wrap.clearfix
+    = render 'layouts/footer'

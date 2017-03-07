@@ -1,0 +1,151 @@
+body{
+  >.container {
+      min-height: calc(100vh - 140px);
+      padding-top: 2em;
+  }
+}
+.logo_image {
+  background: linear-gradient(to right, #39B54A , #F7941E); /* Standard syntax */
+  img{
+    display: block;
+      margin: 0 auto;
+      text-align: center;
+      width: 50%;
+  }
+}
+.two-em-bottom{
+  margin-bottom: 1em;
+}
+
+#users {
+  margin: 0 auto;
+  width: 100%;
+  .box {
+    margin: 10px;
+    width: 200px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+    border-radius: 7px;
+    text-align: center;
+    img {
+      max-width: 100% !important;
+      height: auto;
+    }
+    h2 {
+      font-size: 22px;
+      margin: 0;
+      padding: 25px 10px;
+      a {
+        color: #474747;
+      }
+    }
+    .user {
+      font-size: 1em;
+      border-top: 1px solid #EAEAEA;
+      padding: 15px;
+      margin: 0;
+    }
+  }
+}
+
+.boxes-wrapper {
+  margin: 0 auto;
+  width: 100%;
+  .small-box {
+    margin: 10px;
+    background: #F8F8F8;
+    width: 300px;
+    display: inline-block;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    text-align: center;
+    img {
+      max-width: 100% !important;
+      height: auto;
+    }
+    h2 {
+      font-size: 22px;
+      margin: 0;
+      padding: 25px 10px;
+      a {
+        color: #F7941E;
+      }
+    }
+    .description {
+      font-size: 1em;
+      border-top: 1px solid #EAEAEA;
+      padding: 15px;
+      margin: 0;
+    }
+  }
+}
+
+.footer{
+  background-color: #000;
+  .navbar{
+    margin-bottom: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .navbar-nav{
+      float: none;
+      width: 100%;
+      @media screen and (max-width: 499px ){
+           margin: 0px;
+      }
+      >li{
+        float: none;
+        @media screen and (min-width: 500px ){
+           display: inline-block;
+        }
+      }
+    }
+  }
+  a{
+      color: #fff;
+      font-size: 1.1em;
+  }
+  a:hover{
+    background-color: #EBEEF3;
+  }
+}
+.italicized{
+  font-style: italic;
+} 
+
+#errors{
+  border: 1px solid red;
+  padding: 1em 2em;
+  margin: 2em;
+  p{
+    color: red;
+  }
+  ul{
+    li{
+      color: green;
+    }
+  }
+}
+
+.table-fixed{
+  tbody{
+    max-height: 230px;
+    overflow-y: auto;
+    width: 100%;
+    display: block;
+    tr{
+      width:100% !important;
+    }
+  }
+}
+
+label.required:after {
+  content:" *";
+}
+
+
+
+@-moz-document url-prefix() {
+  input[type="file"] {
+    padding: 0 10px;
+    border-radius: 0 !important;
+  }
+}

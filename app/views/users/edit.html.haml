@@ -1,0 +1,12 @@
+.col-md-10.col-md-offset-1
+  .row
+    .panel.panel-default
+      .panel-heading.text-center
+        %h2
+          %i Edit User Account
+
+      .panel-body
+        = render 'form'
+
+      .panel-footer
+        = link_to "Cancel", root_path, class: "btn btn-default"

@@ -1,0 +1,17 @@
+- if current_user.admin?
+  .row.two-em-bottom
+    .col-md-10
+      .btn-group.pull-left      
+        = link_to "Edit roles", edit_user_path, class: "btn btn-default btn-sm"
+        = link_to "Destroy Account", user_path(@user), method: :delete, data: { confirm: "Are You Sure you want to Destroy this account?"}, class: "btn btn-primary btn-sm"
+
+.main_content
+  #top_row.row
+    .col-md-3
+      %p.text-center
+        %b= "#{@user.first_name} #{@user.last_name}"
+      .btn-group
+        - if current_user.id == @user.id || current_user.admin?
+          = link_to "Back", root_path, class: "btn btn-default btn-sm"
+          = link_to "Edit Profile", edit_user_path(@user), class: "btn btn-default btn-sm"
+          = link_to "Edit Reg Details", edit_user_registration_path, class: "btn btn-default btn-sm"

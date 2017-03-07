@@ -1,0 +1,17 @@
+.main_content
+  #top_row.row
+    .col-md-12
+      .white-box
+        %h1.text-center All users
+        %table.table.table-hover
+          %thead
+            %tr
+              %th.col-md-5.text-center Name
+              %th.col-md-4.text-center email
+              %th.col-md-3.text-center Registration Date
+          %tbody
+            - @users.each do |user|
+              %tr
+                %td.text-center= link_to user.first_name+" "+user.last_name, user
+                %td.text-center= user.email
+                %td.text-center= user.created_at
